@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>AI | Neural Networks | Matteo Pariset</title>
+  <meta name="description" content="An introduction to Neural Networks & their applications"/>
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat:200,300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/ai.css?<?php echo date("H:i:s"); ?>"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$']]}
+});
+</script>
+  <script type="text/javascript">
+  $(window).bind('scroll', function() {
+    if ($(window).scrollTop() > 50) {
+      $("#curtain-section").removeClass("curtain-up").addClass("curtain-down");
+    } else {
+      $("#curtain-section").removeClass("curtain-down").addClass("curtain-up");
+    }
+  });
+  </script>
+</head>
+
+<body>
+  <div class="canvas">
+    <div class="top-banner">
+      <div class="selectors-bar">
+        <div onclick="location.href='index.php';" class="selector">
+          HOME
+        </div>
+        <div onclick="location.href='me.php';" class="selector">
+          ABOUT ME
+        </div>
+      </div>
+      <div id="curtain-section" class="section curtain-up">
+        Artificial Intelligence
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="page-title">
+        <div class="title-main">
+          AI: Neural Networks
+        </div>
+        <div class="title-sub">
+          How artificial brains learn
+        </div>
+      </div>
+
+      <div class="page-text">
+
+        <h1>Introduction</h1>
+        <p>The long walk to build a complete artificial brain takes its origin from the most inaccessible questions about existence. It is shaped by the profound meaning we assign to our freedom, our destiny and our soul. It must go through the contradictions of philosophical models of the mind to reach, at last, the insidious land of working prototypes.</p>
+        <p>Maybe artificial intelligence always made men curious precisely because it is far more than an engineering problem. It is an opportunity to gain a deeper insight on this world.</p>
+        <p>The first stop of the ambitious journey of AI is the close observation of nature, to reveal and imitate its alchemies. But, in the attempt of using our minds to understand themselves, the ultimate goal of this search comes to light: the reproduction of the noblest expression of intelligence, self-awareness.</p>
+        <p>Chapters 2 to 4 briefly present the main concepts in AI, whereas the following ones thoroughly describe Vanilla Networks.</p>
+
+        <div style="position:relative;height:0;padding-bottom:56.25%">
+          <iframe src="https://www.youtube.com/embed/naxejsaj3UU?rel=0&amp;ecver=2" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
+        </div>
+
+        <h1>The philosophy of intelligence</h1>
+        <h2>What does intelligent mean?</h2>
+        <p>Before dealing with the evolution of AI, we need some sort of definition of <b>intelligence</b>. Even though the question appears to be easy, no exhaustive definition is available, because of its excessive generality or – on the contrary – its restraining specificity. Here however we only limit ourselves to list three fundamental aspects of it:</p>
+        <ol>
+          <li>
+            The ability to interact (acquire information and formulate reactions) with the environment;
+          </li>
+          <li>
+            The ability to carry out with success – or, at least, take steps towards – a pre-set aim;
+          </li>
+          <li>
+            Some degree of self-consciousness or, in other words, the awareness of being an agent and not an effect.
+          </li>
+        </ol>
+        <p>Having in mind the first two features, Alan Turing formulated his famous intelligence test. Turing essentially asserted that if a computer can carry on a conversation with humans without letting them realize its nature, then it can be considered intelligent.</p>
+
+        <h2>Strong AI vs. Weak AI</h2>
+        <p>The conceptual foundations of Turing Test, however, are not universally accepted. In fact, this type of assessment does not consider the third property of our definition of intelligence and can – at least in theory – be passed by an <b>expert system</b>.</p>
+        <p>Some critics believe that it is doomed simply because of its strong anthropocentrism. They accuse it of establishing an undue correspondence between human intelligence and its artificial counterpart. Explaining this with Bertrand Russell’s words, it would be as if aeronautical engineering texts described the goal of their field as <cite>making machines that fly so exactly like pigeons that they can fool other pigeons</cite>. In this perspective, it is not possible to evaluate an intelligent being according to its resemblance to a human being.</p>
+        <p>A clever argument showing the problem has been proposed by the philosopher John Searle and is known as the <b>Chinese Room Test</b>. If a computer software persuades a Chinese speaker that it is too a Chinese speaker, then its set of instructions can be manually executed by someone that does not speak Chinese. While being able to write well-formed Chinese sentences, he would still be completely stranger to this language.</p>
+        <p>According to Searle, without intentionality – what we usually call understanding – there is no intelligence. This implies that no deterministic procedure can never be as a true human mind – or, using Searle’s language, <b>strong AI</b> is no more than a dream.</p>
+        <p>What could still be possible, however, are forms of <b>weak AI</b>, i.e. extra-human intelligence not resembling humans at all but still useful for some specific tasks.</p>
+
+        <h1>Functionalism and its limits</h1>
+        <p>One of the historically relevant scientific approaches to the AI problem is called <b>functionalism</b> and was proposed by the American mathematician Hilary Putnam.</p>
+        <p>Mental events are defined as functions, i.e. operational roles. Providing that one reconstructs the same relationships and input/output systems, any physical support – either neurons or Swiss cheese – could be in principle a mind.</p>
+        <p>Amid all the optimism coming from the construction of the first computers, the brain was thought as no more than a (very powerful) one. Only the logical processes (the “software” running on the brain) did matter, the hardware (the physical brain) did not.</p>
+        <p>A well-known success of this line of research is represented by Deep Blue, the software which could defeat the world chess champion Garry Kasparov in 1996.</p>
+        <p>In spite of some remarkable steps forward, however, many simple human abilities – like voice recognition – could not be imitated. No software could even hold a conversation worthy of a five years old child.</p>
+
+        <h1>Connectionism</h1>
+        <p>The lack of convincing results from functionalism shifted the focus to a different perspective: <b>connectionism</b>. The brain was no more the physical place in which abstract functions could operate but the true essence of intelligence. This huge network of connections between neurons – in which billions of chemical reactions take place every second – is what makes possible the miracle of understanding.</p>
+        <p>An artificial equivalent, hence, should emulate the biological features of the brain. Neural networks took the stage and their nature will be discussed from now on.</p>
+
+        <h1>An Artificial brain</h1>
+        <h2>First types of neurons</h2>
+        <p>In 1943, McCulloch and Pitts had already elaborated the first model of a binary neuron, a component that could be activated – like human neurons – when its synaptic inputs exceeded a certain threshold.</p>
+        <p>Many different binary neurons could be interconnected, forming a so-called <b>neural network</b>. The only missing part was a law providing some sort of learning.</p>
+
+        <h2>The Perceptron</h2>
+        <p>Taking advantage from the intuition of the psychologist Donald Hebb, that learning does not create new links among neurons but only modifies their electrical conductivity, Frank Rosenblatt conceived an evolution algorithm for neurons. The <b>perceptron</b> was born.</p>
+        <p>The core idea behind it was to provide the neuron with a way to check its own output against the desired one and progressively correct its synaptic weights to reduce the gap.</p>
+
+        <h2>Sigmoid Neurons</h2>
+        <p>To improve the performances of binary neurons, models that output real values were created. Here we examine <b>sigmoid neurons</b> even though recent work has shown that they are not the most efficient ones.</p>
+        <p>A sigmoid neuron assigns to its output a value in the (real) interval [0, 1]. In the picture below, such a value is φ(ο), where φ is known as activation function and ο is the weighted means of inputs (I1, …, In) according to their synaptic weights ω.</p>
+        <img src="./img/neuron.png" style="position:relative; left: 15vw; width: 50vw; margin-bottom: 2vh;"/>
+
+        <h1>Vanilla Networks</h1>
+        <p>Neural networks that make use of sigmoid neurons (or similar) and respect some architectural constraints, for instance providing some notion of layer, are called <b>Multilayer Perceptrons</b> or <b>Vanilla Neural Networks</b>.</p>
+        <p>Their peculiar structure – especially the connection of each neuron in a layer (uniquely) with every neuron of the following layer – provides the sufficient regularity to design a mathematical method to train the artificial brain to perform complex tasks. Such method is known as <b>Back-Propagation Algorithm</b> and its name, along with its structure, will become clear in the next section.</p>
+
+        <h1>Back-Propagation Algorithm in detail</h1>
+        <p>The following picture shows a Multilayer Perceptron with <b>L</b> layers, with the output of the last layer of neurons acting as answer of the brain. For instance, in an application where the artificial brain must perform face recognition one could establish that each neuron of the output layer corresponds to a different person.</p>
+        <img src="./img/vanilla-network.png" style="position:relative; left: 15vw; width: 50vw; margin-bottom: 2vh;"/>
+
+        <h2>Overview</h2>
+        <p>First the network is initialized with random synaptic weights. Then, given a training input, the output of the brain <b>Y</b> is compared to the desired one <b>T</b>.</p>
+        <p>The aim is adjusting the synaptic weights ω up to minimizing the error made by the network.</p>
+
+        <h2>Analysis</h2>
+        <p>We consider a network taking a vector $I$ of $m$ components as input and returning $Y$ with $N^L$ components. The table below groups the symbols used next.</p>
+
+        <table style="width: 100%;">
+          <tr><th>Symbol</th><th>Meaning</th></tr>
+          <tr><td class="math-symbol">$L$</td><td>Number of layers composing the neural network</td></tr>
+          <tr><td class="math-symbol">$l$</td><td>Index of the layer</td></tr>
+          <tr><td class="math-symbol">$N^l$</td><td>Number of neurons in layer $l$</td></tr>
+          <tr><td class="math-symbol">$I_j$</td><td>$j$-th component of the input, with $j=\{1, 2, ..., m\}$</td></tr>
+          <tr><td class="math-symbol">$net_i^l$</td><td>Weighted sum of the input of the $i$-th neuron in layer $l$, with $i=\{1, 2, ..., N^l\}$</td></tr>
+          <tr><td class="math-symbol">$O_i^l$</td><td>Output of the $i$-th neuron in layer $l$, with $i=\{1, 2, ..., N^l\}$</td></tr>
+          <tr><td class="math-symbol">$Y_n$</td><td>$n$-th component of the network output (layer <b>L</b>), with $n=\{1, 2, ..., N^l\}$</td></tr>
+          <tr><td class="math-symbol">$\varphi$</td><td>Activation function of the neuron</td></tr>
+          <tr><td class="math-symbol">$\omega_{ji}^l$</td><td>Synaptic weight of the link between neuron $i$ in layer $l-1$ and neuron $j$ in layer $l$</td></tr>
+          <tr><td class="math-symbol">$\delta_i^l$</td><td>Partial derivative of the error with respect to the weighted sum of the inputs of the $i$-th neuron in layer $l$</td></tr>
+          <tr><td class="math-symbol">$T_j$</td><td>$j$-th component of the training vector $T$, containing the desired output of the network for a specific input $I$</td></tr>
+          <tr><td class="math-symbol">$g_{ji}^l$</td><td>Partial derivative of the error with respect to the weight $\omega_{ji}^l$</td></tr>
+          <tr><td class="math-symbol">$\eta$</td><td>Learning coefficient</td></tr>
+        </table>
+        <p>As explained above, here we use sigmoid neurons even though many different models exist.</p>
+        <p>As the activation function φ we choose the standard logistic function because:</p>
+        <ol>
+          <li>its first derivative can be easily calculated</li>
+          <li>the value of its derivative changes according to the absolute value of the distance of its argument from $x=0$.</li>
+        </ol>
+        <p>In particular, we take:
+          $$\varphi(x) = \frac{1}{1+e^{-x}}$$
+          And hence:
+          $$\varphi'(x) = \frac{e^x}{(1+e^x)^2} = \varphi(x)(1-\varphi(x))$$
+          Consequently, the output of the neuron $j$ in layer $l$ will be:
+          $$O_j^l = \varphi(net_j^l) = \varphi\Bigg( \sum_{i=0}^{N^{l-1}}(O_i^{l-1}\omega_{ji}^l)\Bigg)$$
+          Given that the result is the output of the last layer of the network, then $Y_j = O_j^L$.
+        </p>
+        <p>We can now define an expression quantifying the error made by the network, for instance:
+          $$E(T,Y) = \frac{1}{2} \sum_{i=0}^{N^L} (T_i-Y_i)^2$$
+        Where the only purpose of the coefficient $\frac{1}{2}$ is to avoid multiplicative factors in $E'$. Clearly, we could have chosen many other expressions as the error.
+        </p>
+        <p>The aim is to minimize the value of this function.</p>
+        <p>If $Y$ depended on a single synaptic weight $\omega$, the problem would amount to find the minimum of a parabola. But, since the variables (the weights) are $N^l \cdot N^{l-1} + ... + N^1 \cdot N^0$, we should locate an absolute minimum of a surface in $N^l \cdot N^{l-1} + ... + N^1 \cdot N^0 + 1$ dimensions. However, by conceding that we might content ourselves with a relative minimum instead that the absolute one(s), we can avoid analytic means and profit from gradient descent.</p>
+        <p>We observe, nevertheless, that the previous concession adds a certain unpredictability to the outcome of the learning process of our network. The search (by gradient descent) is, in fact, influenced by the starting point - which is chosen at random (see above). In other words, some artificial brains will prove better or worse than others at learning the same task (interestingly, in the same way as human brains do).</p>
+        <p>The value of the correction $\Delta \omega_{ji}^{L}$ of every weight is then given by the negative of the partial derivative of the error with respect to the weight, multiplied by an arbitrary factor $\eta$. This factor does not have to be constant and is necessary to adjust the speed of the evolution of the network. Hence:
+          $$\Delta \omega_{ji}^{L} = - \eta \frac{\partial E}{\partial \omega_{ji}^{L}} \tag{E.1}$$
+        We must now evaluate the partial derivate in the formula above. It turns out that, for the last layer of neurons, this is an easy task. In fact, applying twice the chain rule of differentiation we obtain:
+          $$\frac{\partial E}{\partial \omega_{ji}^{L}} = \frac{\partial E}{\partial O_j^L} \frac{\partial O_j^L}{\partial net_j^L} \frac{\partial net_j^L}{\partial \omega_{ji}^L} \tag{E.2}$$
+        </p>
+        <p>Below, we rewrite in useful forms each of the three factors in <b>E.2</b>:</p>
+        <p>
+          $$\frac{\partial net_j^L}{\partial \omega_{ji}^L} = \frac{\partial}{\partial \omega_{ji}^L}\Bigg( \sum_{k=0}^{N^{L-1}} (O_k^{L-1} \omega_{jk}^L) \Bigg) = \frac{\partial}{\partial \omega_{ji}^L}(O_i^{L-1} \omega_{ji}^L) = O_i^{L-1}$$
+          $$\frac{\partial O_j^L}{\partial net_j^L} = \frac{\partial}{\partial net_j^L} \varphi (net_j^L) = \varphi (net_j^L) \big( 1 - \varphi (net_j^L)\big)$$
+          $$\frac{\partial E}{\partial O_j^L} = \frac{\partial E}{\partial Y_j} = \frac{\partial}{\partial Y_j}\bigg( \frac{1}{2} (T_j - Y_j)^2\bigg) = \frac{1}{2}2(T_j - Y_j)(-1) = Y_j - T_j$$
+        </p>
+        <p>If we call $\delta_j^L$ the sensitivity of the output of neuron $j$ with respect to the weighted sum of its inputs, then:
+          $$\delta_j^L = \frac{\partial E}{\partial O_j^L} \frac{\partial O_j^L}{\partial net_j^L} = (Y_j - T_j) Y_j (1 - Y_j)$$
+        We can rewrite the correction for a weight as:</p>
+        <p>
+          $$\Delta \omega_{ji}^L = - \eta \frac{\partial E}{\partial \omega_{ji}^L} = - \eta \delta_j^L \frac{\partial net_j^L}{\partial \omega_{ji}^L} = - \eta Y_j (1 - Y_j) (Y_j - T_j) O_i^{L-1}$$
+        </p>
+        <p>The computation of the partial derivative in <b>E.2</b> for neurons in inner layers is less straight-forward because we do not know the desired output $T_j^l$ of any neuron. For brevity, we omit the proof.
+        The expression we obtain for $\delta_j^l$ if $l \in \{1, 2, ..., L-1\}$ is:
+          $$\delta_j^l = O_j^l (1-O_j^l) \sum_{k=0}^{N^{l+1}} \delta_k^{l+1} \omega_{kj}^{l+1}$$
+        </p>
+        <p>As we can see, the value of $\delta$ for a neuron belonging to an inner layer $l$ is calculated from the ones of neurons in layer $l+1$. In other words, the evolution of the network is computed backwards, beginning from the output layer. This feature is the one that determines the name of the algorithm.</p>
+        <p>If the network is not yet sufficiently precise at the end of the first cycle of learning, another one is performed. In general, this procedure is repeated several thousands of times before obtaining the expected results.</p>
+        <p>The learning process is considered concluded if:
+          $$\big \lvert g_{ji}^L \big \rvert = \Bigg \lvert \frac{\partial E}{\partial \omega_{ji}^L} \Bigg \rvert \leq g_{MIN}$$
+          for $\forall j \in \{1, 2, ..., N^L\}$ and $\forall i \in \{1, 2, ..., N^{L-1} \}$, or if the number of cycles exceeds a chosen threshold.
+        </p>
+
+        <div class="intro-banner">
+          <div class="resource-place">
+            <div class="downloads-caption">
+              Downloads
+            </div>
+            <div class="downloads-area">
+              <div class="downloads-item">
+                <img src="./img/pdf.png" class="downloads-icon"/><a class="downloads-link" href="./res/papers/Neural_Networks.pdf">Complete pdf version</a>
+              </div>
+            </div>
+          </div>
+          <div class="quote">
+            <div class="quote-text">
+              Gli esseri umani sono portati a riprodurre per capire e a capire per riprodurre.
+            </div>
+            <div class="quote-author">
+              ERNST MACH
+            </div>
+          </div>
+        </div>
+
+        <h1>Sources</h1>
+        <h2>Bibliography</h2>
+        <ul class="bibliography">
+          <li>Abbagnano, Fornero, <cite>L’ideale e il reale 3</cite>, Paravia, 2013</li>
+          <li>Belda, <cite>Menti, macchine e matematica</cite>, RBA, 2011</li>
+          <li>Domingos, <cite>L’algoritmo Definitivo</cite>, Bollati Boringhieri, 2016</li>
+          <li>Gangemi, Miceli, Sprini, <cite>L’intelligenza, Teorie e modelli</cite>, Editori Laterza, 2003</li>
+          <li>Lerda, <cite>Intelligenza umana e intelligenza artificiale, est modus in rebus</cite>, Rubbettino Editore, 2002</li>
+          <li>Minsky, <cite>Semantic Information Processing</cite>, MIT Press, 2015</li>
+          <li>Nilsson, <cite>Intelligenza artificiale</cite>, Apogeo, 2005</li>
+          <li>Searle, <cite>Menti, Cervelli e Programmi</cite>, Clupguide, 1984</li>
+          <li>Turing, <cite>La filosofia degli automi. Origini dell’intelligenza artificiale</cite>, Paolo Boringhieri, 1986; trad. it. di <cite>Computing machinery and in-telligence</cite>, Mind, 1950</li>
+        </ul>
+
+        <h2>Webography</h2>
+        <ul class="bibliography">
+          <li><a href="https://en.wikipedia.org/wiki/Hopfield_network">	https://en.wikipedia.org/wiki/Hopfield_network</a>, 01/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Perceptron">	https://en.wikipedia.org/wiki/Perceptron</a>, 01/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Multilayer_perceptron">https://en.wikipedia.org/wiki/Multilayer_perceptron</a>, 01/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Action_potential">https://en.wikipedia.org/wiki/Action_potential</a>, 05/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model">https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model</a>, 06/05/2017</li>
+          <li><a href="http://www.cs.stir.ac.uk/courses/ITNP4B/lectures/kms/2-Perceptrons.pdf">http://www.cs.stir.ac.uk/courses/ITNP4B/lectures/kms/2-Perceptrons.pdf</a>, 06/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Logistic_function">https://en.wikipedia.org/wiki/Logistic_function</a>, 06/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Hyperbolic_function">https://en.wikipedia.org/wiki/Hyperbolic_function</a>, 08/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Deep_learning#Deep_neural_networks">https://en.wikipedia.org/wiki/Deep_learning#Deep_neural_networks</a>, 08/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Backpropagation">https://en.wikipedia.org/wiki/Backpropagation</a>, 08/05/2017</li>
+          <li><a href="http://neuralnetworksanddeeplearning.com/chap2.html">http://neuralnetworksanddeeplearning.com/chap2.html</a>, 09/05/2017</li>
+          <li><a href="http://wwwold.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node22.html">http://wwwold.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node22.html</a>, 15/05/2017</li>
+          <li><a href="http://numericinsight.com/uploads/A_Gentle_Introduction_to_Backpropagation.pdf">http://numericinsight.com/uploads/A_Gentle_Introduction_to_Backpropagation.pdf</a>, 15/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Root_mean_square">https://en.wikipedia.org/wiki/Root_mean_square</a>, 15/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Partial_derivative">https://en.wikipedia.org/wiki/Partial_derivative</a>, 15/05/2017</li>
+          <li><a href="https://en.wikipedia.org/wiki/Total_derivative">https://en.wikipedia.org/wiki/Total_derivative</a>, 15/05/2017</li>
+          <li><a href="http://www.vetta.org/documents/A-Collection-of-Definitions-of-Intelligence.pdf">http://www.vetta.org/documents/A-Collection-of-Definitions-of-Intelligence.pdf</a>, 22/05/2017</li>
+          <li><a href="https://pdfs.semanticscholar.org/5f2f/031809a4b95dd9de0218648677fcf0999975.pdf">https://pdfs.semanticscholar.org/5f2f/031809a4b95dd9de0218648677fcf0999975.pdf</a>, 24/05/2017</li>
+          <li><a href="http://didattica.uniroma2.it/assets/uploads/corsi/145317/Turing_Macchine_calcolatrici_ed_intelligenza.pdf">http://didattica.uniroma2.it/assets/uploads/corsi/145317/Turing_Macchine_calcolatrici_ed_intelligenza.pdf</a>, 19/06/2017</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="bottom-banner">
+      <div class="footer-content">
+        <div class="left-footer-content">
+          &copy; Matteo Pariset, 2018
+        </div>
+        <div class="right-footer-content">
+          <a href="mailto:matteopariset@gmail.com" class="mailto">
+            matteopariset@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
