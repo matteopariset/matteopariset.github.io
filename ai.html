@@ -6,7 +6,7 @@
   <title>AI | Neural Networks | Matteo Pariset</title>
   <meta name="description" content="An introduction to Neural Networks & their applications"/>
   <link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat:200,300,400" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./css/ai.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/ai.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
   <script type="text/x-mathjax-config">
@@ -29,10 +29,10 @@
   <div class="canvas">
     <div class="top-banner">
       <div class="selectors-bar">
-        <div onclick="location.href='index.html';" class="selector">
+        <div onclick="location.href='./';" class="selector">
           HOME
         </div>
-        <div onclick="location.href='me.html';" class="selector">
+        <div onclick="location.href='about';" class="selector">
           ABOUT ME
         </div>
       </div>
@@ -109,7 +109,7 @@
         <h2>Sigmoid Neurons</h2>
         <p>To improve the performances of binary neurons, models that output real values were created. Here we examine <b>sigmoid neurons</b> even though recent work has shown that they are not the most efficient ones.</p>
         <p>A sigmoid neuron assigns to its output a value in the (real) interval [0, 1]. In the picture below, such a value is φ(ο), where φ is known as activation function and ο is the weighted means of inputs (I1, …, In) according to their synaptic weights ω.</p>
-        <img src="./img/neuron.png" style="position:relative; left: 15vw; width: 50vw; margin-bottom: 2vh;"/>
+        <img src="assets/img/neuron.png" style="position:relative; left: 15vw; width: 50vw; margin-bottom: 2vh;"/>
 
         <h1>Vanilla Networks</h1>
         <p>Neural networks that make use of sigmoid neurons (or similar) and respect some architectural constraints, for instance providing some notion of layer, are called <b>Multilayer Perceptrons</b> or <b>Vanilla Neural Networks</b>.</p>
@@ -117,7 +117,7 @@
 
         <h1>Back-Propagation Algorithm in detail</h1>
         <p>The following picture shows a Multilayer Perceptron with <b>L</b> layers, with the output of the last layer of neurons acting as answer of the brain. For instance, in an application where the artificial brain must perform face recognition one could establish that each neuron of the output layer corresponds to a different person.</p>
-        <img src="./img/vanilla-network.png" style="position:relative; left: 15vw; width: 50vw; margin-bottom: 2vh;"/>
+        <img src="assets/img/vanilla-network.png" style="position:relative; left: 15vw; width: 50vw; margin-bottom: 2vh;"/>
 
         <h2>Overview</h2>
         <p>First the network is initialized with random synaptic weights. Then, given a training input, the output of the brain <b>Y</b> is compared to the desired one <b>T</b>.</p>
@@ -198,7 +198,7 @@
             </div>
             <div class="downloads-area">
               <div class="downloads-item">
-                <img src="./img/pdf.png" class="downloads-icon"/><a class="downloads-link" href="./res/papers/Neural_Networks.pdf">Complete pdf version</a>
+                <img src="assets/img/pdf.png" class="downloads-icon"/><a class="downloads-link" href="./res/papers/Neural_Networks.pdf">Complete pdf version</a>
               </div>
             </div>
           </div>

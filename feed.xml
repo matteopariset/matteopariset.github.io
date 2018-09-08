@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-08T17:50:03+02:00</updated><id>http://localhost:4000/</id><title type="html">Ideas &amp;amp; Projects | Matteo Pariset</title><subtitle>A nice collection of some of my ideas and projects</subtitle><author><name>Matteo Pariset</name></author><entry><title type="html">Artificial Intelligence</title><link href="http://localhost:4000/artificial-intelligence/" rel="alternate" type="text/html" title="Artificial Intelligence" /><published>2018-08-25T18:19:19+02:00</published><updated>2018-08-25T18:19:19+02:00</updated><id>http://localhost:4000/artificial-intelligence</id><content type="html" xml:base="http://localhost:4000/artificial-intelligence/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;The long walk to build a complete artificial brain takes its origin from the most inaccessible questions about existence. It is shaped by the profound meaning we assign to our freedom, our destiny and our soul. It must go through the contradictions of philosophical models of the mind to reach, at last, the insidious land of working prototypes.&lt;/p&gt;
+
+&lt;p&gt;Maybe artificial intelligence always made men curious precisely because it is far more than an engineering problem. It is an opportunity to gain a deeper insight on this world.&lt;/p&gt;
+
+&lt;p&gt;The first stop of the ambitious journey of AI is the close observation of nature, to reveal and imitate its alchemies. But, in the attempt of using our minds to understand themselves, the ultimate goal of this search comes to light: the reproduction of the noblest expression of intelligence, self-awareness.&lt;/p&gt;
+
+&lt;p&gt;We will describe some of theory behind the development of this exciting field. In the video below, an example of my AI software recognising letters.&lt;/p&gt;
+
+&lt;div style=&quot;position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0;&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/naxejsaj3UU?color=white&amp;amp;theme=light&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Gli esseri umani sono portati a riprodurre per capire e a capire per riprodurre. – &lt;cite&gt;Ernst Mach&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;go-on&quot;&gt;Go on…&lt;/h1&gt;
+&lt;h2 id=&quot;continue-to-read-this-article-online-or-download-the-full-paper-here&quot;&gt;Continue to read this article &lt;a href=&quot;/ai.html&quot;&gt;online&lt;/a&gt; or download the full paper &lt;a href=&quot;https://matteopariset.github.io/res/papers/Neural_Networks.pdf&quot;&gt;here&lt;/a&gt;&lt;/h2&gt;</content><author><name>Matteo Pariset</name></author><category term="AI" /><category term="Neural Networks" /><summary type="html">Introduction</summary></entry><entry><title type="html">Welcome</title><link href="http://localhost:4000/welcome/" rel="alternate" type="text/html" title="Welcome" /><published>2018-08-09T18:19:19+02:00</published><updated>2018-08-09T18:19:19+02:00</updated><id>http://localhost:4000/welcome</id><content type="html" xml:base="http://localhost:4000/welcome/"></content><author><name>Matteo Pariset</name></author><summary type="html"></summary></entry><entry><title type="html">LabVIEW Image Composer</title><link href="http://localhost:4000/image-composer/" rel="alternate" type="text/html" title="LabVIEW Image Composer" /><published>2018-07-10T18:19:19+02:00</published><updated>2018-07-10T18:19:19+02:00</updated><id>http://localhost:4000/image-composer</id><content type="html" xml:base="http://localhost:4000/image-composer/">&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+
+&lt;p&gt;Although the &lt;strong&gt;overlap of two &lt;code class=&quot;highlighter-rouge&quot;&gt;.jpg&lt;/code&gt; images&lt;/strong&gt; seems pretty simple, it requires some work. To simplify things, below, you can find LabVIEW 2015 code that performs this operation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/img-comp.jpg&quot; alt=&quot;Yosh Ginsu&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;parameters&quot;&gt;Parameters&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Parameter&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BACK_IMAGE&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;The path to background image&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FORE_IMAGE&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;The path to foreground image&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;WIDTH&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;INT&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;The desired width (in pixels) of the foreground image&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HEIGHT&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;INT&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;The desired height (in pixels) of the foreground image&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;X&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;INT&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;The x-distance (in pixels) of the foreground from the top-left corner of the background&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Y&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;INT&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;The y-distance (in pixels) of the foreground from the top-left corner of the background&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;PICTURE_IN&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PICTURE&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;The picture box displaying the preview&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SAVE&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;BOOLEAN&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;true&lt;/strong&gt; to save the result in the directory of the foreground image as &lt;em&gt;COMBINED.jpg&lt;/em&gt;; &lt;strong&gt;false&lt;/strong&gt; to only display the preview&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;download&quot;&gt;Download&lt;/h1&gt;
+
+&lt;p&gt;Download the &lt;strong&gt;LabVIEW VI&lt;/strong&gt; from &lt;a href=&quot;/res/soft/ImageComposer.vi&quot;&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</content><author><name>Matteo Pariset</name></author><category term="LabView" /><category term="VI" /><category term="Image processing" /><summary type="html">Description</summary></entry><entry><title type="html">More to come</title><link href="http://localhost:4000/more-to-come/" rel="alternate" type="text/html" title="More to come" /><published>2018-07-09T18:19:19+02:00</published><updated>2018-07-09T18:19:19+02:00</updated><id>http://localhost:4000/more-to-come</id><content type="html" xml:base="http://localhost:4000/more-to-come/"></content><author><name>Matteo Pariset</name></author><summary type="html"></summary></entry></feed>

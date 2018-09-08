@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>LabVIEW Image Composer - Ideas & Projects | Matteo Pariset</title>
+	<meta name="description" content="Simple, parametrized VI to overlap jpg images">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+  <div class="flex-container">
+  <header class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><img src="/assets/img/logo.png" class="menu-icon-logo"></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+      <p class="logo"><a href="/">Matteo Pariset</a></p>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
+
+  <article class="article-page">
+    <div class="page-image">
+      <div class="cover-image" style="background: url(/assets/img/img-comp-wall.jpg) center no-repeat; background-size: cover;"></div>
+    </div>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">LabVIEW Image Composer</h1>
+          <div class="page-date">Simple, parametrized VI to overlap jpg images</div>
+        </div>
+        <h1 id="description">Description</h1>
+
+<p>Although the <strong>overlap of two <code class="highlighter-rouge">.jpg</code> images</strong> seems pretty simple, it requires some work. To simplify things, below, you can find LabVIEW 2015 code that performs this operation.</p>
+
+<p><img src="/assets/img/img-comp.jpg" alt="Yosh Ginsu" /></p>
+
+<h1 id="parameters">Parameters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th> </th>
+      <th>Type</th>
+      <th> </th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BACK_IMAGE</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">PATH</code></td>
+      <td> </td>
+      <td>The path to background image</td>
+    </tr>
+    <tr>
+      <td>FORE_IMAGE</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">PATH</code></td>
+      <td> </td>
+      <td>The path to foreground image</td>
+    </tr>
+    <tr>
+      <td>WIDTH</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">INT</code></td>
+      <td> </td>
+      <td>The desired width (in pixels) of the foreground image</td>
+    </tr>
+    <tr>
+      <td>HEIGHT</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">INT</code></td>
+      <td> </td>
+      <td>The desired height (in pixels) of the foreground image</td>
+    </tr>
+    <tr>
+      <td>X</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">INT</code></td>
+      <td> </td>
+      <td>The x-distance (in pixels) of the foreground from the top-left corner of the background</td>
+    </tr>
+    <tr>
+      <td>Y</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">INT</code></td>
+      <td> </td>
+      <td>The y-distance (in pixels) of the foreground from the top-left corner of the background</td>
+    </tr>
+    <tr>
+      <td>PICTURE_IN</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">PICTURE</code></td>
+      <td> </td>
+      <td>The picture box displaying the preview</td>
+    </tr>
+    <tr>
+      <td>SAVE</td>
+      <td> </td>
+      <td><code class="highlighter-rouge">BOOLEAN</code></td>
+      <td> </td>
+      <td><strong>true</strong> to save the result in the directory of the foreground image as <em>COMBINED.jpg</em>; <strong>false</strong> to only display the preview</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="download">Download</h1>
+
+<p>Download the <strong>LabVIEW VI</strong> from <a href="/res/soft/ImageComposer.vi"><strong>here</strong></a>.</p>
+
+        <div class="page-footer">
+          <div class="page-tag">
+            <span>Tags:</span>
+            
+            <a href="/tags#LabView" class="tag">| LabView</a>
+            
+            <a href="/tags#VI" class="tag">| VI</a>
+            
+            <a href="/tags#Image processing" class="tag">| Image processing</a>
+            
+          </div><!-- End Tags -->
+          <div class="page-share">
+            <span>Share:</span>
+            <a href="https://twitter.com/intent/tweet?text=LabVIEW Image Composer&url=http://localhost:4000/image-composer/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/sharer.php?u=http://localhost:4000/image-composer/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/share?url=http://localhost:4000/image-composer/" title="Share on Google+" rel="nofollow" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+          </div><!-- End Share -->
+		  
+        </div>
+        <section class="author-box">
+  <img src="/assets/img/my-face.jpg" alt="Matteo Pariset" class="author-img">
+  <div class="author-desc">
+    <h2>Matteo Pariset</h2>
+    <p>I'm a math & software enthusiast with a burning passion for cryptography and AI.</p>
+    <ul>
+      
+        <li class="email"><a href="mailto:matteopariset@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+      
+      
+      
+      
+    </ul>
+  </div>
+</section>
+
+        <div class="recent-box">
+  <h2 class="recent-title">Recent post</h2>
+  <div class="recent-list">
+    
+      
+		
+			<a href="/artificial-intelligence/" class="recent-item" style="background: url(/assets/img/ai-wall.jpg) center no-repeat; background-size: cover;"><span>Artificial Intelligence</span></a>
+		
+      
+    
+      
+		
+      
+    
+      
+		
+			<a href="/image-composer/" class="recent-item" style="background: url(/assets/img/img-comp-wall.jpg) center no-repeat; background-size: cover;"><span>LabVIEW Image Composer</span></a>
+		
+      
+    
+      
+		
+      
+    
+  </div>
+</div> <!-- End Recent-Box -->
+
+        <!-- include newsletter.html -->
+        <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+		var disqus_config = function () {
+			this.page.url = page.title;
+			this.page.identifier = page.title;
+		};
+
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//matteopariset.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+      </div>
+    </div> <!-- End Wrapper -->
+  </article>
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="main-footer">
+  <div class="copyright">
+    <p>2018 &copy; Matteo Pariset</p>
+  </div>
+</footer> <!-- End Footer -->
+
+</div>
+
+  <!-- JS -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jekyll-search.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>
+<script src="/assets/js/main.js"></script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
