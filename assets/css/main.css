@@ -854,6 +854,10 @@ pre code {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.article-page {
+  /* background-color: #e0e0e0; */
+}
+
 .content {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -919,7 +923,6 @@ pre code {
 
 .main-header .logo a {
   text-decoration: none;
-  text-transform: uppercase;
   font-size: 27px;
   font-weight: 300;
   color: #000000;
@@ -1102,6 +1105,9 @@ pre code {
 
 .post-card {
   position: relative;
+  margin-bottom: 6px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .post-card .post-card-image {
@@ -1268,32 +1274,45 @@ pre code {
   position: relative;
   padding: 0;
   margin: 0;
-  height: 500px;
+  height: 400px;
   background-color: #fff;
   overflow: hidden;
 }
 
-.page-image .cover-image {
+.cover-image {
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+}
+
+.cover-image-fading {
+  position: absolute;
+  bottom: -1px;
+  height: 200px;
+  width: 100%;
+  z-index: 10;
+}
+
+.page-image .cover-image, .cover-image-fading {
   height: 100%;
   width: 100%;
 }
 
 .page-content {
-  margin-top: -80px;
+  margin-top: -250px;
   margin-bottom: 100px;
-  background-color: #fff;
   padding: 20px;
-  -webkit-border-top-left-radius: 20px;
-          border-top-left-radius: 20px;
-  -webkit-border-top-right-radius: 20px;
-          border-top-right-radius: 20px;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.page-content p {
+  line-height: 1.8;
 }
 
 .header-page {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 150px;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .header-page h1 {
@@ -1302,7 +1321,6 @@ pre code {
   font-size: 40px;
   text-align: center;
   margin: 0 0 3px;
-  color: #311e3e;
 }
 
 .header-page .page-date {
@@ -1310,6 +1328,27 @@ pre code {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 300;
+  z-index: 10;
+}
+
+.header-background {
+  background: white;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  -webkit-border-bottom-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  -webkit-border-top-left-radius: 50px;
+  border-top-left-radius: 50px;
+  -webkit-border-bottom-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  -webkit-border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+
 }
 
 .page-footer {

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://matteopariset.github.io/more-to-come/</loc>
-<lastmod>2018-07-09T18:19:19+02:00</lastmod>
-</url>
-<url>
 <loc>https://matteopariset.github.io/image-composer/</loc>
 <lastmod>2018-07-10T18:19:19+02:00</lastmod>
 </url>
@@ -15,6 +11,10 @@
 <url>
 <loc>https://matteopariset.github.io/artificial-intelligence/</loc>
 <lastmod>2018-08-25T18:19:19+02:00</lastmod>
+</url>
+<url>
+<loc>https://matteopariset.github.io/fake-news-pt1/</loc>
+<lastmod>2020-05-02T18:19:19+02:00</lastmod>
 </url>
 <url>
 <loc>https://matteopariset.github.io/about/</loc>
