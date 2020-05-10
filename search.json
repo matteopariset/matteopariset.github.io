@@ -2,9 +2,31 @@
   
     
     {
+      "title"    : "SuperGLUE Benchmark",
+      "category" : "",
+      "tags"     : "AI, NLP, SuperGLUE Benchmark",
+      "url"      : "/superglue/",
+      "date"     : "2020-05-08 18:19:19 +0200"
+    } 
+    
+    ,
+  
+    
+    {
+      "title"    : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "",
+      "date"     : ""
+    } 
+    
+    ,
+  
+    
+    {
       "title"    : "Against Fake News / part 1",
       "category" : "",
-      "tags"     : "FAKE NEWS, INTERNET",
+      "tags"     : "Fake news, Internet, Information",
       "url"      : "/fake-news-pt1/",
       "date"     : "2020-05-02 18:19:19 +0200"
     } 
@@ -13,10 +35,10 @@
   
     
     {
-      "title"    : "Artificial Intelligence",
+      "title"    : "Learning Algorithms",
       "category" : "",
       "tags"     : "AI, Neural Networks",
-      "url"      : "/artificial-intelligence/",
+      "url"      : "/intro-back-propagation/",
       "date"     : "2018-08-25 18:19:19 +0200"
     } 
     
